@@ -8,14 +8,16 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float _rotateSpeed;
 
     [Header("Gravity handling")]
-    private float _currentAttractionCharacter = 0;
     [SerializeField] private float _gravityForce = 20;
+    private float _currentAttractionCharacter = 0;
 
     private CharacterController _characterController;
+    private Animator _animator;
 
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
