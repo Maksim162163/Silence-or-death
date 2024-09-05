@@ -37,7 +37,6 @@ public class MovementController : MonoBehaviour
     private void Update()
     {
         GravityHandling();
-        UpdateIK();
     }
 
     private void OnAnimatorIK(int layerIndex)
