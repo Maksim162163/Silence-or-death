@@ -85,7 +85,7 @@ public class MovementController : MonoBehaviour
             }
             var rotation = Quaternion.FromToRotation(transform.up, leftHit.normal) * transform.rotation;
             // getting the y rotation from the animation looks more natural
-            leftFootRotation = Quaternion.Euler(rotation.eulerAngles.x, leftFoot.eulerAngles.y, rotation.eulerAngles.z);
+            leftFootRotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z);
         }
 
         if (Physics.Raycast(rightPos + Vector3.up * heightFromGround, Vector3.down, out rightHit, 1))
@@ -96,7 +96,7 @@ public class MovementController : MonoBehaviour
                 rightFootPos.y = Mathf.Lerp(lastRightFootPos.y, rightFootPos.y, Time.deltaTime * ikSpeed);
             }
             var rotation = Quaternion.FromToRotation(transform.up, rightHit.normal) * transform.rotation;
-            rightFootRotation = Quaternion.Euler(rotation.eulerAngles.x, leftFoot.eulerAngles.y, rotation.eulerAngles.z);
+            rightFootRotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z);
         }
 
         lastLeftFootPos = leftFootPos;
